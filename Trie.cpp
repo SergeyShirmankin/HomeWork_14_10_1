@@ -1,19 +1,6 @@
-﻿//#include <bits/stdc++.h>
-#include <iostream>
+﻿#include <iostream>
+#include "Trie.h"
 using namespace std;
-
-const int ALPHABET_SIZE = 26;
-
-// trie node
-struct TrieNode
-{
-	struct TrieNode* children[ALPHABET_SIZE];
-
-	// isEndOfWord is true if the node represents
-	// end of a word
-	bool isEndOfWord;
-};
-
 // Returns new trie node (initialized to NULLs)
 struct TrieNode* getNode(void)
 {
@@ -67,30 +54,3 @@ bool search(struct TrieNode* root, string key)
 	return (pCrawl->isEndOfWord);
 }
 
-// Driver
-int main()
-{
-	// Input keys (use only 'a' through 'z'
-	// and lower case)
-	string keys[] = { "the", "a", "there",
-					"answer", "any", "by",
-					"bye", "their" };
-	int n = sizeof(keys) / sizeof(keys[0]);
-	int n1 = sizeof(keys);
-	struct TrieNode* root = getNode();
-
-	// Construct trie
-	for (int i = 0; i < n; i++)
-		insert(root, keys[i]);
-
-	// Search for different keys
-	search(root, "the") ? cout << "Yes\n" :
-		cout << "No\n";
-	search(root, "these") ? cout << "Yes\n" :
-		cout << "No\n";
-	search(root, "their") ? cout << "Yes\n" :
-		cout << "No\n";
-	search(root, "thaw") ? cout << "Yes\n" :
-		cout << "No\n";
-	return 0;
-}
