@@ -2,5 +2,6 @@
 #include "Node.h"
 using namespace std;
 struct TrieNode* getNode(void);
-void insert(struct TrieNode* root, string key);
+struct TrieNode* insert(struct TrieNode* root, string key);
 bool search(struct TrieNode* root, string key);
+void searchNode(struct TrieNode* current,string &findWord);
