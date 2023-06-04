@@ -1,6 +1,24 @@
 #include  <iostream>
 #include "Trie.h"
 using namespace std;
+
+void  Start() 
+{
+	while (true) 
+	{
+		cout << "Please, enter  one word only low register !!!" << endl;
+		cout << "For exit press q" << endl;
+		string input;
+		cin >> input;
+		if (!input.compare("q"))
+			break;
+		else
+		{
+			cout << input<<endl;
+		}
+	}
+}
+
 void Test() {
 	// Input keys (use only 'a' through 'z'
 		// and lower case)
